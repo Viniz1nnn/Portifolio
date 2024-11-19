@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
   }, 50);
 });
 
-// HEADER TRANSPARENT
+// HEADER TRANSPARENTE
 
 window.addEventListener("scroll", function () {
   let header = document.querySelector("#header");
@@ -39,6 +39,37 @@ const moverElemento = () => {
 moverElemento();
 
 window.addEventListener("resize", moverElemento);
+
+window.addEventListener("scroll", function () {
+  let sections = document.querySelectorAll("section, footer");
+  let navLinks = document.querySelectorAll(".nav-link");
+
+  sections.forEach(function (section) {
+    var top = window.scrollY;
+    var offset = section.offsetTop - 60;
+    var height = section.offsetHeight;
+    var id = section.getAttribute("id");
+
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(function (link) {
+        link.classList.remove("active");
+      });
+      document
+        .querySelector(".nav-link[href*=" + id + "]")
+        .classList.add("active");
+    }
+  });
+
+  var footer = document.querySelector("footer");
+  if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+    navLinks.forEach(function (link) {
+      link.classList.remove("active");
+    });
+    document
+      .querySelector('.nav-link[href*="contatos"]')
+      .classList.add("active");
+  }
+});
 
 // MENU HAMBURGER
 
