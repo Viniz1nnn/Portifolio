@@ -50,7 +50,7 @@ window.addEventListener("scroll", function () {
     var height = section.offsetHeight;
     var id = section.getAttribute("id");
 
-    if (top >= offset && top < offset + height) {
+    if (top >= offset - 270 && top < offset + height + 270) {
       navLinks.forEach(function (link) {
         link.classList.remove("active");
       });
