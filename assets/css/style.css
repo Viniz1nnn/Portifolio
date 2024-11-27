@@ -541,6 +541,10 @@ footer {
     transform: translateX(0);
   }
 
+  .nav-list.hidden {
+    transform: translateX(100%);
+  }
+
   .menu .nav-list a {
     font-size: 25px;
   }
