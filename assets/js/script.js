@@ -13,17 +13,6 @@ window.addEventListener("scroll", function () {
 
 // DIRECIONADORES DO SITE
 
-let navLinks = document.querySelectorAll(".nav-link");
-
-navLinks.forEach((navLink) => {
-  navLink.addEventListener("click", () => {
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-    });
-    navLink.classList.add("active");
-  });
-});
-
 let downloadCv = document.getElementById("download-cv");
 let div1 = document.querySelector(".header");
 let div2 = document.querySelector(".nav-list");
@@ -76,6 +65,7 @@ window.addEventListener("scroll", function () {
 let mobileMenu = document.querySelector(".mobile-menu");
 let header = document.querySelector("header");
 let nav = document.querySelector(".nav-list");
+let navLinks = document.querySelectorAll(".nav-link");
 
 mobileMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
@@ -86,4 +76,11 @@ mobileMenu.addEventListener("click", () => {
     header.style.backgroundColor = "rgba(13, 13, 13, 0.95)";
   }
   nav.style.display = "flex";
+});
+
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    nav.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
 });
