@@ -85,10 +85,10 @@ header.rolagem {
 
 .menu .line {
   transition: 0.3s;
-  width: 32px;
+  width: 30px;
   height: 2px;
   background: #fff;
-  margin: 8px;
+  margin: 7px;
 }
 
 .menu .nav-list {
@@ -523,10 +523,15 @@ footer {
   .menu {
     justify-content: flex-end;
   }
+
+  .menu li {
+    height: 10%;
+  }
+
   .menu .nav-list {
     display: none;
     top: 70px;
-    gap: 20;
+    gap: 20px;
     position: absolute;
     right: 0;
     width: 40vw;
@@ -562,8 +567,12 @@ footer {
     position: relative;
   }
 
+  .header .button {
+    margin: 20% 0;
+  }
+
   .menu .mobile-menu.active #line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
+    transform: rotate(-45deg) translate(-7px, 7px);
   }
 
   .menu .mobile-menu.active #line2 {
@@ -643,8 +652,8 @@ footer {
   }
 
   .section-initial .photo img {
-    width: 280px;
-    height: 280px;
+    width: 270px;
+    height: 270px;
   }
 
   .section-skills .skills--icons {
