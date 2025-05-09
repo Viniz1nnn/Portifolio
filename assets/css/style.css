@@ -15,6 +15,7 @@ body {
 }
 
 .container {
+  width: 80%;
   max-width: 1400px;
   margin: auto;
 }
@@ -259,10 +260,11 @@ header.rolagem {
 
 .skills--area {
   min-height: 350px;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 
 .section-skills h2 {
@@ -275,25 +277,27 @@ header.rolagem {
 }
 
 .skills--icons {
+  min-height: 110px;
   width: 100%;
   display: flex;
   font-size: 70px;
   justify-content: center;
-  padding-top: 30px;
+  margin-top: 40px;
   gap: 30px;
 }
 
-.skills--icons .skill i:hover {
-  color: rgb(117, 12, 255);
+.skills--icons .skill:hover {
   transform: scale(1.07);
   border: 2px solid rgb(117, 12, 255);
 }
 
-.skills--area i {
+.skills--area .skill {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 2px solid #fff;
-  padding: 30px 170px;
+  height: 110px;
+  width: 30%;
   transition: 0.3s;
   color: inherit;
 }
@@ -323,13 +327,11 @@ header.rolagem {
   flex-direction: column;
   width: 400px;
   padding: 30px;
-  border: 2px solid #fff;
   transition: 0.3s;
 }
 
 .projects--area .project:hover {
-  transform: scale(1.08);
-  border: 2px solid rgb(117, 12, 255);
+  transform: scale(1.03);
 }
 
 .projects--area .project img {
@@ -420,7 +422,7 @@ footer {
   align-items: center;
   display: flex;
   width: 30px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .contacts--area .contacts a i:hover {
@@ -458,10 +460,6 @@ footer {
     width: 350px;
   }
 
-  .skills--area i {
-    padding: 30px 140px;
-  }
-
   .header #download-cv {
     margin: 0;
   }
@@ -474,10 +472,6 @@ footer {
 @media (max-width: 1200px) {
   .container {
     width: 90%;
-  }
-
-  .skills--area i {
-    padding: 25px 100px;
   }
 
   .projects--area .projects {
@@ -608,10 +602,6 @@ footer {
 }
 
 @media (max-width: 870px) {
-  .skills--area i {
-    padding: 25px 50px;
-  }
-
   .projects--area .project {
     width: 100%;
     display: flex;
@@ -664,6 +654,10 @@ footer {
 
   .section-skills h2 {
     font-size: 30px;
+  }
+
+  .section-skills .skills--icons .skill {
+    width: auto;
   }
 
   .skills--area .skill:not(:last-child) {
