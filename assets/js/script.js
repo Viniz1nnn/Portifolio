@@ -1,8 +1,8 @@
-window.addEventListener("load", () => {
+/*window.addEventListener("load", () => {
   setTimeout(() => {
     window.scrollTo(0, 0);
   }, 50);
-});
+});*/
 
 // HEADER TRANSPARENTE
 
@@ -83,4 +83,79 @@ navLinks.forEach((navLink) => {
     nav.classList.remove("active");
     mobileMenu.classList.remove("active");
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("assets/projetos.json")
+    .then((response) => {
+      console.log("Resposta:", response);
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Projetos:", data);
+      const projetos = data.projetos;
+      const projectsContainer = document.getElementById("projects-container");
+      if (!projectsContainer) {
+        console.error("projectsContainer não encontrado");
+        return;
+      }
+
+      const projectTemplate = document.getElementById("project-template");
+      if (!projectTemplate) {
+        console.error("projectTemplate não encontrado");
+        return;
+      }
+      projetos.forEach((projeto) => {
+        const projectClone = document.importNode(projectTemplate.content, true);
+        const projectImage = projectClone.querySelector("#project-image");
+        projectImage.src = projeto.imagem;
+        const projectIcons = projectClone.querySelector("#project-icons");
+        if (!projectIcons) {
+          console.error("projectIcons não encontrado");
+          return;
+        }
+        projeto.tecnologias.forEach((tecnologia) => {
+          const icon = document.createElement("div");
+          icon.classList.add("skill");
+          const i = document.createElement("i");
+          const classes = tecnologia.icone.split(" ");
+          classes.forEach((clazz) => {
+            i.classList.add(clazz);
+          });
+          i.style.color = tecnologia.cor;
+          icon.appendChild(i);
+          if (projectIcons) {
+            projectIcons.appendChild(icon);
+          } else {
+            console.error("projectIcons não encontrado");
+          }
+        });
+        const projectLink = projectClone.querySelector("#project-link");
+        projectLink.href = projeto.link;
+        const projectTitle = projectClone.querySelector("#project-title");
+        projectTitle.textContent = projeto.titulo;
+        const projectDescription = projectClone.querySelector(
+          "#project-description"
+        );
+        if (!projectDescription) {
+          console.error("projectDescription não encontrado");
+          return;
+        }
+        projeto.descricao.forEach((desc) => {
+          const p = document.createElement("p");
+          p.textContent = desc;
+          if (projectDescription) {
+            projectDescription.appendChild(p);
+          } else {
+            console.error("projectDescription não encontrado");
+          }
+        });
+        if (projectsContainer) {
+          projectsContainer.appendChild(projectClone);
+        } else {
+          console.error("projectsContainer não encontrado");
+        }
+      });
+    })
+    .catch((error) => console.error("Erro ao carregar projetos:", error));
 });

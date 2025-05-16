@@ -297,7 +297,7 @@ header.rolagem {
   align-items: center;
   border: 2px solid #fff;
   height: 110px;
-  width: 30%;
+  width: 100%;
   transition: 0.3s;
   color: inherit;
 }
