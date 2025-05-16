@@ -345,12 +345,12 @@ header.rolagem {
   justify-content: space-between;
 }
 
-.projects--area .project .icons {
+.projects--area .project .project-icons {
   display: flex;
   padding: 10px 0;
 }
 
-.projects--area .project .icons i {
+.projects--area .project .project-icons i {
   font-size: 30px;
   margin-right: 10px;
 }
