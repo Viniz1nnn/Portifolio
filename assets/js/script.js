@@ -85,6 +85,8 @@ navLinks.forEach((navLink) => {
   });
 });
 
+// PEGAR INFORMACOES DOS PROJETOS NO JSON E MANDAR PARA O HTML
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Primeiro carregue o template original
   const projectTemplate = document.querySelector(".project");
@@ -110,12 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Cria uma cópia do template
         const projetoClone = projectTemplate.cloneNode(true);
 
-        // Preenche os dados (usando classes em vez de IDs)
+        // Preenche os dados
         const img = projetoClone.querySelector(".image img");
-        const link = projetoClone.querySelector(".box-button a");
+        const link = projetoClone.querySelector(".box a");
         const title = projetoClone.querySelector(".txt--project h3");
         const desc = projetoClone.querySelector(".desc--project");
-        const icons = projetoClone.querySelector(".icons");
 
         if (img) img.src = projeto.imagem;
         if (img) img.alt = projeto.titulo;
@@ -128,13 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Ícones de tecnologias
-        if (icons) {
-          icons.innerHTML = projeto.tecnologias
+        const iconsContainer = projetoClone.querySelector(".project-icons");
+        if (iconsContainer && projeto.tecnologias) {
+          iconsContainer.innerHTML = projeto.tecnologias
             .map(
               (tech) =>
-                `<i class="${tech.icone}" style="color: ${tech.cor}"></i>`
+                `<i class="${tech.icone}" style="color: ${tech.cor};"></i>`
             )
-            .join(" ");
+            .join("");
         }
 
         // Adiciona ao DOM
