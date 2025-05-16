@@ -85,77 +85,61 @@ navLinks.forEach((navLink) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("assets/projetos.json")
-    .then((response) => {
-      console.log("Resposta:", response);
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Projetos:", data);
-      const projetos = data.projetos;
-      const projectsContainer = document.getElementById("projects-container");
-      if (!projectsContainer) {
-        console.error("projectsContainer não encontrado");
-        return;
-      }
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Primeiro carregue o template original
+  const projectTemplate = document.querySelector(".project");
 
-      const projectTemplate = document.getElementById("project-template");
-      if (!projectTemplate) {
-        console.error("projectTemplate não encontrado");
-        return;
-      }
+  if (!projectTemplate) {
+    console.error("Template .project não encontrado!");
+    return;
+  }
+
+  // 2. Carrega os projetos do JSON
+  fetch("assets/projetos.json") // ATUALIZE PARA O CAMINHO CORRETO
+    .then((response) => response.json())
+    .then((data) => {
+      const projetos = data.projetos;
+      const portfolioContainer =
+        document.querySelector(".projects") || document.body; // Fallback
+
+      // 3. Limpa o container (remove o template original)
+      portfolioContainer.innerHTML = "";
+
+      // 4. Para cada projeto no JSON...
       projetos.forEach((projeto) => {
-        const projectClone = document.importNode(projectTemplate.content, true);
-        const projectImage = projectClone.querySelector("#project-image");
-        projectImage.src = projeto.imagem;
-        const projectIcons = projectClone.querySelector("#project-icons");
-        if (!projectIcons) {
-          console.error("projectIcons não encontrado");
-          return;
+        // Cria uma cópia do template
+        const projetoClone = projectTemplate.cloneNode(true);
+
+        // Preenche os dados (usando classes em vez de IDs)
+        const img = projetoClone.querySelector(".image img");
+        const link = projetoClone.querySelector(".box-button a");
+        const title = projetoClone.querySelector(".txt--project h3");
+        const desc = projetoClone.querySelector(".desc--project");
+        const icons = projetoClone.querySelector(".icons");
+
+        if (img) img.src = projeto.imagem;
+        if (img) img.alt = projeto.titulo;
+        if (link) link.href = projeto.link;
+        if (title) title.textContent = projeto.titulo;
+
+        // Descrição com parágrafos
+        if (desc) {
+          desc.innerHTML = projeto.descricao.map((p) => `<p>${p}</p>`).join("");
         }
-        projeto.tecnologias.forEach((tecnologia) => {
-          const icon = document.createElement("div");
-          icon.classList.add("skill");
-          const i = document.createElement("i");
-          const classes = tecnologia.icone.split(" ");
-          classes.forEach((clazz) => {
-            i.classList.add(clazz);
-          });
-          i.style.color = tecnologia.cor;
-          icon.appendChild(i);
-          if (projectIcons) {
-            projectIcons.appendChild(icon);
-          } else {
-            console.error("projectIcons não encontrado");
-          }
-        });
-        const projectLink = projectClone.querySelector("#project-link");
-        projectLink.href = projeto.link;
-        const projectTitle = projectClone.querySelector("#project-title");
-        projectTitle.textContent = projeto.titulo;
-        const projectDescription = projectClone.querySelector(
-          "#project-description"
-        );
-        if (!projectDescription) {
-          console.error("projectDescription não encontrado");
-          return;
+
+        // Ícones de tecnologias
+        if (icons) {
+          icons.innerHTML = projeto.tecnologias
+            .map(
+              (tech) =>
+                `<i class="${tech.icone}" style="color: ${tech.cor}"></i>`
+            )
+            .join(" ");
         }
-        projeto.descricao.forEach((desc) => {
-          const p = document.createElement("p");
-          p.textContent = desc;
-          if (projectDescription) {
-            projectDescription.appendChild(p);
-          } else {
-            console.error("projectDescription não encontrado");
-          }
-        });
-        if (projectsContainer) {
-          projectsContainer.appendChild(projectClone);
-        } else {
-          console.error("projectsContainer não encontrado");
-        }
+
+        // Adiciona ao DOM
+        portfolioContainer.appendChild(projetoClone);
       });
     })
-    .catch((error) => console.error("Erro ao carregar projetos:", error));
+    .catch((err) => console.error("Erro ao carregar projetos:", err));
 });
