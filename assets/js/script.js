@@ -97,12 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2. Carrega os projetos do JSON
-  fetch("assets/projetos.json") // ATUALIZE PARA O CAMINHO CORRETO
+  fetch("assets/projetos.json")
     .then((response) => response.json())
     .then((data) => {
       const projetos = data.projetos;
-      const portfolioContainer =
-        document.querySelector(".projects") || document.body; // Fallback
+      const portfolioContainer = document.querySelector(".projects");
 
       // 3. Limpa o container (remove o template original)
       portfolioContainer.innerHTML = "";
@@ -112,36 +111,88 @@ document.addEventListener("DOMContentLoaded", () => {
         // Cria uma cópia do template
         const projetoClone = projectTemplate.cloneNode(true);
 
-        // Preenche os dados
-        const img = projetoClone.querySelector(".image img");
-        const link = projetoClone.querySelector(".box a");
-        const title = projetoClone.querySelector(".txt--project h3");
-        const desc = projetoClone.querySelector(".desc--project");
+        // Preenche os dados básicos (visíveis inicialmente)
+        const img = projetoClone.querySelector(".project-image");
+        const title = projetoClone.querySelector(".project-title");
+        const iconsContainer = projetoClone.querySelector(".project-icons");
 
-        if (img) img.src = projeto.imagem;
-        if (img) img.alt = projeto.titulo;
-        if (link) link.href = projeto.link;
+        projetoClone.id = `project-${projeto.id}`;
+
+        if (img) {
+          img.src = projeto.imagem;
+          img.alt = projeto.titulo;
+        }
         if (title) title.textContent = projeto.titulo;
 
-        // Descrição com parágrafos
-        if (desc) {
-          desc.innerHTML = projeto.descricao.map((p) => `<p>${p}</p>`).join("");
-        }
-
         // Ícones de tecnologias
-        const iconsContainer = projetoClone.querySelector(".project-icons");
         if (iconsContainer && projeto.tecnologias) {
           iconsContainer.innerHTML = projeto.tecnologias
             .map(
               (tech) =>
-                `<i class="${tech.icone}" style="color: ${tech.cor};"></i>`
+                `<i class="${tech.icone}" style="color: ${tech.cor}"></i>`
             )
-            .join("");
+            .join(" ");
         }
+
+        // Configura o clique para abrir o modal
+        projetoClone.addEventListener("click", () => {
+          openModal(projeto);
+        });
 
         // Adiciona ao DOM
         portfolioContainer.appendChild(projetoClone);
       });
     })
     .catch((err) => console.error("Erro ao carregar projetos:", err));
+
+  // Função para abrir o modal com os detalhes completos
+  function openModal(projeto) {
+    const modal = document.getElementById("projectModal");
+    const modalImg = modal.querySelector(".modal-image");
+    const modalTitle = modal.querySelector(".modal-title");
+    const modalDesc = modal.querySelector(".modal-description");
+    const modalTech = modal.querySelector(".modal-tech");
+    const modalLink = modal.querySelector(".modal-link");
+
+    // Preenche o modal com os dados completos
+    modalImg.src = projeto.imagem;
+    modalImg.alt = projeto.titulo;
+    modalTitle.textContent = projeto.titulo;
+    modalLink.href = projeto.link;
+
+    // Descrição com parágrafos
+    modalDesc.innerHTML = projeto.descricao.map((p) => `<p>${p}</p>`).join("");
+
+    // Tecnologias com nomes
+    modalTech.innerHTML = projeto.tecnologias
+      .map(
+        (tech) => `
+          <div style="display: flex; align-items: center; gap: 5px;">
+              <i class="${tech.icone}" style="color: ${
+          tech.cor
+        }; font-size: 1.2rem;"></i>
+              <span>${tech.icone.split("fa-")[1].replace("-", " ")}</span>
+          </div>
+      `
+      )
+      .join("");
+
+    // Mostra o modal
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  // Fechar modal
+  document.querySelector(".close-modal").addEventListener("click", () => {
+    document.getElementById("projectModal").classList.remove("active");
+    document.body.style.overflow = "auto";
+  });
+
+  // Fechar ao clicar fora do conteúdo
+  document.getElementById("projectModal").addEventListener("click", (e) => {
+    if (e.target === document.getElementById("projectModal")) {
+      document.getElementById("projectModal").classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+  });
 });
