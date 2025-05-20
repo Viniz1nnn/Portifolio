@@ -1,7 +1,7 @@
 {
   "projetos": [
     {
-      "id": "portifolio",
+      "id": "thiago-portifolio",
       "imagem": "assets/image/portifolio.png",
       "tecnologias": [
         {
@@ -66,6 +66,30 @@
       "descricao": [
         "Este projeto é um site de pizzaria com funcionalidades de seleção e adição de pizzas ao carrinho, desenvolvido com JavaScript, HTML e CSS. Foi realizado como parte do curso de ensino e aprendizagem com o Professor Bonieky Lacerda da B7Web.",
         "O objetivo principal foi aplicar na prática conceitos aprendidos, proporcionando uma interface interativa e amigável para o usuário. Através deste projeto, aprimoro minhas habilidades, técnicas e a capacidade de criar experiências digitais envolventes e funcionais."
+      ]
+    },
+    {
+      "id": "pagina-de-links-raimunda",
+      "imagem": "assets/image/Raimunda veras.jpg",
+      "tecnologias": [
+        {
+          "icone": "fa-brands fa-square-js",
+          "cor": "#d1be15"
+        },
+        {
+          "icone": "fa-brands fa-html5",
+          "cor": "#c06215"
+        },
+        {
+          "icone": "fa-brands fa-css3-alt",
+          "cor": "#3881c5"
+        }
+      ],
+      "link": "https://thiagovinicio.netlify.app/",
+      "titulo": "Raimunda Veras Engenharia",
+      "descricao": [
+        "Esta é uma página de links personalizada, desenvolvida com HTML, CSS e JavaScript, que permite aos usuários acessar rapidamente suas redes sociais e outros recursos importantes. O objetivo principal foi criar uma interface simples, intuitiva e responsiva, que proporcionasse uma experiência de usuário agradável e eficiente. ",
+        "A página de links oferece uma navegação fácil e rápida para as principais redes sociais e recursos, tornando-a uma ferramenta útil para qualquer pessoa que deseje centralizar seus links importantes em um só lugar. Através deste projeto, pude aprimorar minhas habilidades em design de interface do usuário, desenvolvimento front-end e otimização de desempenho web."
       ]
     }
   ]
