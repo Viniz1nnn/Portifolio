@@ -146,16 +146,8 @@
                   <img class="project-image" src="" alt="" />
                 </div>
                 <div class="box">
-                  <div class="project-icons"></div>
-                  <a href="#" target="_blank" class="project-link">
-                    <div class="box-button">
-                      <button class="button">Ver Projeto</button>
-                    </div>
-                  </a>
-                </div>
-                <div class="txt--project">
                   <h3 class="project-title"></h3>
-                  <div class="desc--project"></div>
+                  <div class="project-icons"></div>
                 </div>
               </div>
             </div>
@@ -203,89 +195,6 @@
       </div>
     </footer>
     <style>
-      .portfolio-header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .portfolio-header h1 {
-        font-size: 2.5rem;
-        background: linear-gradient(45deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        display: inline-block;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .project-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        position: relative;
-      }
-
-      .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .project-image-container {
-        height: 200px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .project-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s;
-      }
-
-      .project-card:hover .project-image {
-        transform: scale(1.1);
-      }
-
-      .device-frame {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      .project-info {
-        padding: 20px;
-      }
-
-      .project-title {
-        margin: 0 0 10px;
-        font-size: 1.3rem;
-      }
-
-      .project-tech {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-      }
-
-      .tech-icon {
-        font-size: 1.2rem;
-      }
-
       .view-project {
         display: inline-block;
         padding: 8px 20px;
@@ -324,7 +233,7 @@
       }
 
       .modal-content {
-        background: white;
+        background: rgb(26, 26, 26);
         border-radius: 15px;
         width: 90%;
         max-width: 800px;
@@ -354,16 +263,10 @@
         color: var(--primary);
       }
 
-      .modal-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
       .modal-device {
         width: 50px;
         height: 50px;
-        background: #f0f2f5;
+        background: #383838;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -389,109 +292,8 @@
         line-height: 1.6;
         margin-bottom: 20px;
       }
-
-      .modal-tech {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 25px;
-      }
-
-      .modal-tech-item {
-        display: flex;
-        align-items: center;
-        background: #f0f2f5;
-        padding: 8px 15px;
-        border-radius: 50px;
-      }
-
-      .modal-tech-icon {
-        margin-right: 8px;
-        font-size: 1.1rem;
-      }
-
-      .modal-link {
-        display: inline-flex;
-        align-items: center;
-        padding: 10px 25px;
-        background: var(--primary);
-        color: white;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s;
-      }
-
-      .modal-link:hover {
-        background: #5a52d4;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
-      }
-
-      .modal-link i {
-        margin-right: 8px;
-      }
-
-      @media (max-width: 768px) {
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .modal-content {
-          width: 95%;
-          padding: 20px;
-        }
-      }
     </style>
 
-    <div class="portfolio-header">
-      <h1>Meus Projetos</h1>
-      <p>Clique em qualquer projeto para ver detalhes</p>
-    </div>
-
-    <div class="projects-grid">
-      <!-- Projeto 1 - Mobile -->
-      <div class="project-card" data-project="starbucks">
-        <div class="project-image-container">
-          <img
-            src="assets/image/starbucks.png"
-            alt="Starbucks"
-            class="project-image"
-          />
-          <div class="device-frame mobile-frame"></div>
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">Starbucks</h3>
-          <div class="project-tech">
-            <i class="fab fa-html5 tech-icon" style="color: #e44d26"></i>
-            <i class="fab fa-css3-alt tech-icon" style="color: #2965f1"></i>
-          </div>
-          <a class="view-project">Ver Detalhes</a>
-        </div>
-      </div>
-
-      <!-- Projeto 2 - Desktop -->
-      <div class="project-card" data-project="pizzas">
-        <div class="project-image-container">
-          <img
-            src="assets/image/pizza.png"
-            alt="Pizzaria"
-            class="project-image"
-          />
-          <div class="device-frame desktop-frame"></div>
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">Pizzaria</h3>
-          <div class="project-tech">
-            <i class="fab fa-js tech-icon" style="color: #f0db4f"></i>
-            <i class="fab fa-html5 tech-icon" style="color: #e44d26"></i>
-            <i class="fab fa-css3-alt tech-icon" style="color: #2965f1"></i>
-          </div>
-          <a class="view-project">Ver Detalhes</a>
-        </div>
-      </div>
-
-      <!-- Projeto 3 - Tablet -->
-     
     <!-- Modal -->
     <div class="modal" id="projectModal">
       <div class="modal-content">
@@ -508,123 +310,15 @@
         </div>
         <div class="modal-tech" id="modalProjectTech"></div>
         <a href="#" target="_blank" class="modal-link" id="modalProjectLink">
-          <i class="fas fa-external-link-alt"></i> Visitar Projeto
+          <a href="#" target="_blank" class="project-link">
+            <div class="box-button">
+              <button class="button">Ver Projeto</button>
+            </div>
+          </a>
         </a>
       </div>
     </div>
 
-    <script>
-      // Dados dos projetos (pode ser substituído por fetch JSON)
-      const projectsData = {
-        starbucks: {
-          title: "Starbucks",
-          image: "assets/image/starbucks.png",
-          description:
-            "Réplica do site da Starbucks desenvolvida com HTML e CSS puros. Este projeto foi criado como exercício prático para aprimorar habilidades de design responsivo e replicação de layouts complexos.",
-          technologies: [
-            { icon: "fab fa-html5", name: "HTML5", color: "#E44D26" },
-            { icon: "fab fa-css3-alt", name: "CSS3", color: "#2965F1" },
-          ],
-          link: "https://taupe-kitsune-80237a.netlify.app/",
-          device: "mobile",
-        },
-        pizzas: {
-          title: "Pizzaria",
-          image: "assets/image/pizza.png",
-          description:
-            "Site completo de pizzaria com carrinho de compras funcional. Desenvolvido com JavaScript vanilla para a lógica do carrinho e cálculo de totais. Design responsivo que funciona bem em todos os dispositivos.",
-          technologies: [
-            { icon: "fab fa-js", name: "JavaScript", color: "#F0DB4F" },
-            { icon: "fab fa-html5", name: "HTML5", color: "#E44D26" },
-            { icon: "fab fa-css3-alt", name: "CSS3", color: "#2965F1" },
-          ],
-          link: "https://pizza-site-treinando-javascript.netlify.app/",
-          device: "desktop",
-        },
-        portfolio: {
-          title: "Meu Portfólio",
-          image: "assets/image/portifolio.png",
-          description:
-            "Meu portfólio pessoal desenvolvido para mostrar meus projetos e habilidades. Inclui seções sobre mim, habilidades técnicas, projetos destacados e formas de contato. Totalmente responsivo e com animações suaves.",
-          technologies: [
-            { icon: "fab fa-js", name: "JavaScript", color: "#F0DB4F" },
-            { icon: "fab fa-html5", name: "HTML5", color: "#E44D26" },
-            { icon: "fab fa-css3-alt", name: "CSS3", color: "#2965F1" },
-          ],
-          link: "https://thiagovinicio.netlify.app/",
-          device: "tablet",
-        },
-      };
-
-      // Elementos do modal
-      const modal = document.getElementById("projectModal");
-      const modalTitle = document.getElementById("modalProjectTitle");
-      const modalImage = document.getElementById("modalProjectImage");
-      const modalDescription = document.getElementById(
-        "modalProjectDescription"
-      );
-      const modalTech = document.getElementById("modalProjectTech");
-      const modalLink = document.getElementById("modalProjectLink");
-      const modalDeviceIcon = document.getElementById("modalDeviceIcon");
-      const closeModal = document.querySelector(".close-modal");
-
-      // Abrir modal ao clicar em um projeto
-      document.querySelectorAll(".project-card").forEach((card) => {
-        card.addEventListener("click", function () {
-          const projectId = this.getAttribute("data-project");
-          const project = projectsData[projectId];
-
-          // Preencher modal com dados do projeto
-          modalTitle.textContent = project.title;
-          modalImage.src = project.image;
-          modalImage.alt = project.title;
-          modalDescription.innerHTML = `<p>${project.description}</p>`;
-          modalLink.href = project.link;
-
-          // Definir ícone do dispositivo
-          modalDeviceIcon.innerHTML = "";
-          let deviceIcon;
-          if (project.device === "mobile") {
-            deviceIcon = '<i class="fas fa-mobile-alt"></i>';
-          } else if (project.device === "desktop") {
-            deviceIcon = '<i class="fas fa-desktop"></i>';
-          } else {
-            deviceIcon = '<i class="fas fa-tablet-alt"></i>';
-          }
-          modalDeviceIcon.innerHTML = deviceIcon;
-
-          // Adicionar tecnologias
-          modalTech.innerHTML = "";
-          project.technologies.forEach((tech) => {
-            const techItem = document.createElement("div");
-            techItem.className = "modal-tech-item";
-            techItem.innerHTML = `
-                        <i class="${tech.icon} modal-tech-icon" style="color: ${tech.color}"></i>
-                        <span>${tech.name}</span>
-                    `;
-            modalTech.appendChild(techItem);
-          });
-
-          // Mostrar modal
-          modal.classList.add("active");
-          document.body.style.overflow = "hidden";
-        });
-      });
-
-      // Fechar modal
-      closeModal.addEventListener("click", function () {
-        modal.classList.remove("active");
-        document.body.style.overflow = "auto";
-      });
-
-      // Fechar ao clicar fora do conteúdo
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-          modal.classList.remove("active");
-          document.body.style.overflow = "auto";
-        }
-      });
-    </script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
