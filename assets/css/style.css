@@ -324,31 +324,34 @@ header.rolagem {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto; 
-
+  width: 80%;
+  margin: auto;
 }
 
 .projects--area .project {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
   background-color: #1a1a1a;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  
-  transition: 0.3s;
+  overflow: hidden;
 }
 
 /* ALTERACOES POR ID DO PROJETO */
 
 .projects--area #project-thiago-portifolio {
-  grid-row: 3;
-  grid-column: 1 / span 3;
+  grid-row: 2;
+  grid-column: 1 / span 2;
 }
 .projects--area #project-starbucks {
   grid-row: 1;
-  grid-column: 1 / span 2;
+  grid-column: 1;
 }
 .projects--area #project-pizzas {
-  grid-row: 2;
-  grid-column: 1 / span 2;
+  grid-row: 1;
+  grid-column: 2;
 }
 .projects--area #project-pagina-de-links-raimunda {
   grid-column: 3;
@@ -358,18 +361,26 @@ header.rolagem {
 /* FIM DOS PROJETOS POR ID */
 
 .projects--area .project:hover {
-  transform: scale(1.03);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .projects--area .project img {
   border-radius: 8px;
   width: 100%;
   height: 100%;
+  transition: transform 0.5s;
+  object-fit: cover;
+}
+
+.projects--area .project img:hover {
+  transform: scale(1.05);
 }
 
 .projects--area .project .box {
   display: flex;
   justify-content: space-between;
+  margin: 20px;
 }
 
 .projects--area .project .project-icons {
@@ -378,7 +389,7 @@ header.rolagem {
 }
 
 .projects--area .project .project-icons i {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 10px;
 }
 
