@@ -22,20 +22,24 @@ html, body {
 }
 
 .button {
-  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
-  padding: 15px 30px;
-  background: linear-gradient(40deg, #8333cf, #750cff);
-  border-radius: 2rem;
-  border: none;
-  transition: 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 1px solid #999;
 }
 
 .button:hover {
-  transform: scale(0.95);
-  color: #dfdfdf;
+  background: #5a52d4;
+  transform: translateY(-2px);
+  border: 1px solid #5a52d4;
 }
+
 
 /* HEADER */
 
@@ -198,8 +202,23 @@ header.rolagem {
   transform: scale(1.08);
 }
 
+.initial--area .buttons {
+  display: flex;
+  gap: 20px;
+}
+
 .initial--area .button {
   margin-top: 30px;
+}
+
+.initial--area #download-cv .button {
+  border: 0;
+  background-color: #5a52d4;
+}
+
+.initial--area #download-cv button:hover {
+  background-color: #ffffff;
+  color: #5a52d4;
 }
 
 /* SECTION ABOUT */
