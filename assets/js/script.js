@@ -17,18 +17,6 @@ let downloadCv = document.getElementById("download-cv");
 let div1 = document.querySelector(".header");
 let div2 = document.querySelector(".nav-list");
 
-const moverElemento = () => {
-  if (window.innerWidth <= 980) {
-    div2.appendChild(downloadCv);
-  } else {
-    div1.appendChild(downloadCv);
-  }
-};
-
-moverElemento();
-
-window.addEventListener("resize", moverElemento);
-
 window.addEventListener("scroll", function () {
   let sections = document.querySelectorAll("section, footer");
   let navLinks = document.querySelectorAll(".nav-link");
