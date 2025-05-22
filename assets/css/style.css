@@ -23,21 +23,20 @@ html, body {
 
 .button {
   display: inline-block;
+  max-width: 150px;
   padding: 10px 20px;
-  background: var(--primary);
+  background: #272727;
   color: white;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s;
   cursor: pointer;
-  border: 1px solid #999;
+  border: 0;
 }
 
 .button:hover {
   background: #5a52d4;
-  transform: translateY(-2px);
-  border: 1px solid #5a52d4;
 }
 
 
@@ -397,14 +396,20 @@ header.rolagem {
 }
 
 .projects--area .project .box {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   margin: 20px;
+  grid-template-columns: 1fr auto;
+}
+
+.projects--area .project .box button {
+  border: 0;
+  grid-column: 1 / span 2;
 }
 
 .projects--area .project .project-icons {
   display: flex;
   padding: 10px 0;
+  
 }
 
 .projects--area .project .project-icons i {
@@ -422,9 +427,13 @@ header.rolagem {
   padding: 10px 20px;
 }
 
-.projects--area .txt--project h3 {
+.projects--area .box h3 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 8px 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .projects--area .txt--project span {
