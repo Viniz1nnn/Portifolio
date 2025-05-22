@@ -2,17 +2,21 @@
   "projetos": [
     {
       "id": "thiago-portifolio",
+      "screen": "desktop",
       "imagem": "assets/image/portifolio.png",
       "tecnologias": [
         {
+          "name": "JavaScript",
           "icone": "fa-brands fa-square-js",
           "cor": "#d1be15"
         },
         {
+          "name": "HTML",
           "icone": "fa-brands fa-html5",
           "cor": "#c06215"
         },
         {
+          "name": "CSS",
           "icone": "fa-brands fa-css3-alt",
           "cor": "#3881c5"
         }
@@ -26,13 +30,16 @@
     },
     {
       "id": "starbucks",
+      "screen": "desktop",
       "imagem": "assets/image/starbucks.png",
       "tecnologias": [
         {
+          "name": "HTML",
           "icone": "fa-brands fa-html5",
           "cor": "#c06215"
         },
         {
+          "name": "CSS",
           "icone": "fa-brands fa-css3-alt",
           "cor": "#3881c5"
         }
@@ -46,17 +53,21 @@
     },
     {
       "id": "pizzas",
+      "screen": "desktop",
       "imagem": "assets/image/pizza.png",
       "tecnologias": [
         {
+          "name": "JavaScript",
           "icone": "fa-brands fa-square-js",
           "cor": "#d1be15"
         },
         {
+          "name": "HTML",
           "icone": "fa-brands fa-html5",
           "cor": "#c06215"
         },
         {
+          "name": "CSS",
           "icone": "fa-brands fa-css3-alt",
           "cor": "#3881c5"
         }
@@ -70,22 +81,26 @@
     },
     {
       "id": "pagina-de-links-raimunda",
+      "screen": "mobile",
       "imagem": "assets/image/Raimunda veras.jpg",
       "tecnologias": [
         {
+          "name": "JavaScript",
           "icone": "fa-brands fa-square-js",
           "cor": "#d1be15"
         },
         {
+          "name": "HTML",
           "icone": "fa-brands fa-html5",
           "cor": "#c06215"
         },
         {
+          "name": "CSS",
           "icone": "fa-brands fa-css3-alt",
           "cor": "#3881c5"
         }
       ],
-      "link": "https://thiagovinicio.netlify.app/",
+      "link": "https://viniz1nnn.github.io/Raimunda-veras/",
       "titulo": "Raimunda Veras Engenharia",
       "descricao": [
         "Esta é uma página de links personalizada, desenvolvida com HTML, CSS e JavaScript, que permite aos usuários acessar rapidamente suas redes sociais e outros recursos importantes. O objetivo principal foi criar uma interface simples, intuitiva e responsiva, que proporcionasse uma experiência de usuário agradável e eficiente. ",
