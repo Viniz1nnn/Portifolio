@@ -156,10 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(
         (tech) => `
           <div style="display: flex; align-items: center; gap: 5px;">
-              <i class="${tech.icone}" style="color: ${
-          tech.cor
-        }; font-size: 1.2rem;"></i>
-              <span>${tech.icone.split("fa-")[1].replace("-", " ")}</span>
+              <i class="${tech.icone}" style="color: ${tech.cor}; font-size: 1.2rem;"></i>
+              <span>${tech.name}</span>
           </div>
       `
       )
