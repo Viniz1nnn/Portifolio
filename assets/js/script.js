@@ -140,13 +140,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTitle = modal.querySelector(".modal-title");
     const modalDesc = modal.querySelector(".modal-description");
     const modalTech = modal.querySelector(".modal-tech");
+    const modalLinkImg = modal.querySelector(".modal-link--image");
     const modalLink = modal.querySelector(".modal-link");
+    const defaultIcon = modal.querySelector(".default-icon");
+    const mobileIcon = modal.querySelector(".mobile-icon");
 
     // Preenche o modal com os dados completos
     modalImg.src = projeto.imagem;
     modalImg.alt = projeto.titulo;
     modalTitle.textContent = projeto.titulo;
     modalLink.href = projeto.link;
+    modalLinkImg.href = projeto.link;
 
     // Descrição com parágrafos
     modalDesc.innerHTML = projeto.descricao.map((p) => `<p>${p}</p>`).join("");
@@ -156,12 +160,25 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(
         (tech) => `
           <div style="display: flex; align-items: center; gap: 5px;">
-              <i class="${tech.icone}" style="color: ${tech.cor}; font-size: 1.2rem;"></i>
+              <i class="${tech.icone}" style="color: ${tech.cor};"></i>
               <span>${tech.name}</span>
           </div>
       `
       )
       .join("");
+
+    // Tipo de  tela padrão do projeto
+    modal.classList.remove("mobile-screen");
+
+    if (projeto.screen == "mobile") {
+      modal.classList.add("mobile-screen");
+
+      defaultIcon.style.display = "none";
+      mobileIcon.style.display = "block";
+    } else {
+      defaultIcon.style.display = "block";
+      mobileIcon.style.display = "none";
+    }
 
     // Mostra o modal
     modal.classList.add("active");
