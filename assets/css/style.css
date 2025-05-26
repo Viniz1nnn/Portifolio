@@ -8,10 +8,11 @@
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   box-sizing: border-box;
-  background-color: #222222;
+  background-color: rgb(34, 34, 34);
   font-family: "Roboto";
 }
 
@@ -38,7 +39,6 @@ html, body {
 .button:hover {
   background: #5a52d4;
 }
-
 
 /* HEADER */
 
@@ -177,7 +177,7 @@ header.rolagem {
 
 .section-initial h2 {
   padding: 10px 0;
-  color: #616161;
+  color: #fff;
 }
 
 .section-initial p {
@@ -341,12 +341,13 @@ header.rolagem {
   gap: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto; 
+  grid-template-rows: auto auto auto;
   width: 80%;
   margin: auto;
 }
 
 .projects--area .project {
+  height: aauto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -383,10 +384,14 @@ header.rolagem {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
+.projects--area .project .image {
+  height: auto;
+}
+
 .projects--area .project img {
   border-radius: 8px;
   width: 100%;
-  height: 100%;
+  height: auto;
   transition: transform 0.5s;
   object-fit: cover;
 }
@@ -396,9 +401,11 @@ header.rolagem {
 }
 
 .projects--area .project .box {
+  flex-grow: 1;
   display: grid;
   margin: 20px;
   grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
 }
 
 .projects--area .project .box button {
@@ -409,7 +416,6 @@ header.rolagem {
 .projects--area .project .project-icons {
   display: flex;
   padding: 10px 0;
-  
 }
 
 .projects--area .project .project-icons i {
@@ -585,7 +591,6 @@ footer {
 .modal-title {
   font-size: 1.8rem;
   margin: 0;
-  
 }
 
 .modal-image {
@@ -603,7 +608,7 @@ footer {
   grid-template-rows: auto 1fr 1fr;
 }
 
-.mobile-screen .modal-link--image{
+.mobile-screen .modal-link--image {
   grid-row: 1;
 }
 
@@ -618,7 +623,7 @@ footer {
   grid-row: 2;
 }
 
-.modal-description p{
+.modal-description p {
   line-height: 1.6;
   margin-bottom: 20px;
   color: #919191;
@@ -636,19 +641,17 @@ footer {
 .modal-tech div {
   background-color: #2e2e2e;
   padding: 7px 20px;
-  
+
   border-radius: 20px;
   display: flex;
   align-items: center;
 }
 
 .mobile-screen .box-button {
- display: flex;
- align-items: end;
+  display: flex;
+  align-items: end;
 }
 
-
-/*
 @media (max-width: 1500px) {
   .container {
     width: 1250px;
@@ -858,10 +861,6 @@ footer {
 
   .section-skills h2 {
     font-size: 30px;
-  }
-
-  .section-skills .skills--icons .skill {
-    width: auto;
   }
 
   .skills--area .skill:not(:last-child) {
