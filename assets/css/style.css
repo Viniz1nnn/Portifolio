@@ -12,7 +12,7 @@ html,
 body {
   overflow-x: hidden;
   box-sizing: border-box;
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(21, 23, 27);
   font-family: "Roboto";
 }
 
@@ -216,8 +216,12 @@ header.rolagem {
 }
 
 .initial--area #download-cv button:hover {
+  background-color: #1e1a55;
+}
+
+.initial--area .box-button button:hover {
   background-color: #ffffff;
-  color: #5a52d4;
+  color: #272727;
 }
 
 /* SECTION ABOUT */
@@ -351,7 +355,7 @@ header.rolagem {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
-  background-color: #1a1a1a;
+  background-color: rgb(27, 28, 31);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -540,7 +544,7 @@ footer {
 }
 
 .modal-content {
-  background: rgb(26, 26, 26);
+  background: rgb(27, 28, 31);
   border-radius: 15px;
   width: 90%;
   max-width: 800px;
@@ -579,7 +583,7 @@ footer {
 .modal-device {
   width: 50px;
   height: 50px;
-  background: #383838;
+  background: rgb(48, 50, 56);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -639,7 +643,7 @@ footer {
 }
 
 .modal-tech div {
-  background-color: #2e2e2e;
+  background-color: rgb(48, 50, 56);
   padding: 7px 20px;
 
   border-radius: 20px;
@@ -650,6 +654,7 @@ footer {
 .mobile-screen .box-button {
   display: flex;
   align-items: end;
+  font-size: 18px;
 }
 
 @media (max-width: 1500px) {
@@ -664,7 +669,6 @@ footer {
   }
 
   .projects--area .project {
-    width: 350px;
   }
 
   .header #download-cv {
@@ -682,22 +686,22 @@ footer {
   }
 
   .projects--area .projects {
-    display: block;
   }
 
   .projects--area .project {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 400px 1fr;
-  }
-
-  .projects--area .project:not(:first-child) {
-    margin-top: 40px;
   }
 
   .projects--area .project .box {
     margin-top: 10px;
     grid-row: 2;
+  }
+
+  .projects--area button {
+    display: none;
+  }
+
+  .projects--area #project-pagina-de-links-raimunda .box {
+    display: block;
   }
 
   .projects--area .project .txt--project {
