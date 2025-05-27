@@ -8,9 +8,11 @@
   scroll-behavior: smooth;
 }
 
+html,
 body {
   overflow-x: hidden;
-  background-color: #222222;
+  box-sizing: border-box;
+  background-color: rgb(21, 23, 27);
   font-family: "Roboto";
 }
 
@@ -21,19 +23,21 @@ body {
 }
 
 .button {
-  cursor: pointer;
+  display: inline-block;
+  max-width: 150px;
+  padding: 10px 20px;
+  background: #2f2f33;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
-  padding: 15px 30px;
-  background: linear-gradient(40deg, #8333cf, #750cff);
-  border-radius: 2rem;
-  border: none;
-  transition: 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 0;
 }
 
 .button:hover {
-  transform: scale(0.95);
-  color: #dfdfdf;
+  background: #473a94;
 }
 
 /* HEADER */
@@ -47,7 +51,7 @@ header {
 }
 
 header.rolagem {
-  background-color: rgba(13, 13, 13, 0.95);
+  background-color: rgba(13, 13, 13, 0.8);
 }
 
 .header {
@@ -112,8 +116,8 @@ header.rolagem {
 }
 
 .menu a:hover {
-  color: #d1d1d1;
-  text-shadow: 1px 1px 10px #140022;
+  color: #95959b;
+  text-shadow: 1px 1px 10px #000000;
 }
 
 .menu ul a.active {
@@ -130,7 +134,7 @@ header.rolagem {
 .section-initial {
   width: 100%;
   height: 100vh;
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(13, 15, 20);
 }
 
 .section-initial .triangles {
@@ -142,14 +146,14 @@ header.rolagem {
 }
 
 .section-initial .triangle-big {
-  border-bottom: 100vh solid #252525;
+  border-bottom: 100vh solid rgb(33, 32, 36);
   width: 30%;
   position: absolute;
   border-left: 200px solid transparent;
 }
 
 .section-initial .triangle-small {
-  border-top: 100vh solid #2e2e2e;
+  border-top: 100vh solid rgb(56, 55, 61);
   width: 50%;
   border-left: 700px solid transparent;
 }
@@ -173,7 +177,7 @@ header.rolagem {
 
 .section-initial h2 {
   padding: 10px 0;
-  color: #616161;
+  color: #fff;
 }
 
 .section-initial p {
@@ -197,8 +201,27 @@ header.rolagem {
   transform: scale(1.08);
 }
 
+.initial--area .buttons {
+  display: flex;
+  gap: 20px;
+}
+
 .initial--area .button {
   margin-top: 30px;
+}
+
+.initial--area #download-cv .button {
+  border: 0;
+  background-color: #473a94;
+}
+
+.initial--area #download-cv button:hover {
+  background-color: #21165f;
+}
+
+.initial--area .box-button button:hover {
+  background-color: #ffffff;
+  color: #272727;
 }
 
 /* SECTION ABOUT */
@@ -255,7 +278,7 @@ header.rolagem {
 /* SECTION SKILLS */
 
 .section-skills {
-  background-color: #0c0c0c;
+  background-color: rgb(13, 15, 20);
 }
 
 .skills--area {
@@ -297,7 +320,7 @@ header.rolagem {
   align-items: center;
   border: 2px solid #fff;
   height: 110px;
-  width: 30%;
+  width: 100%;
   transition: 0.3s;
   color: inherit;
 }
@@ -305,8 +328,10 @@ header.rolagem {
 /* SECTION PROJECTS */
 
 .projects--area {
-  width: 100%;
+  width: 100vw;
   padding: 100px 0;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .projects--area h2 {
@@ -316,42 +341,89 @@ header.rolagem {
 
 .projects--area .projects {
   position: relative;
-  display: flex;
-  justify-content: space-around;
+  box-sizing: border-box;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  width: 80%;
+  margin: auto;
 }
 
 .projects--area .project {
-  background-color: #1a1a1a;
+  height: aauto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: rgb(27, 28, 31);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  width: 400px;
-  padding: 30px;
-  transition: 0.3s;
+  overflow: hidden;
 }
 
+/* ALTERACOES POR ID DO PROJETO */
+
+.projects--area #project-thiago-portifolio {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+.projects--area #project-starbucks {
+  grid-row: 1;
+  grid-column: 1;
+}
+.projects--area #project-pizzas {
+  grid-row: 1;
+  grid-column: 2;
+}
+.projects--area #project-pagina-de-links-raimunda {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+/* FIM DOS PROJETOS POR ID */
+
 .projects--area .project:hover {
-  transform: scale(1.03);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.projects--area .project .image {
+  height: auto;
 }
 
 .projects--area .project img {
   border-radius: 8px;
   width: 100%;
-  height: 100%;
+  height: auto;
+  transition: transform 0.5s;
+  object-fit: cover;
+}
+
+.projects--area .project img:hover {
+  transform: scale(1.05);
 }
 
 .projects--area .project .box {
-  display: flex;
-  justify-content: space-between;
+  flex-grow: 1;
+  display: grid;
+  margin: 20px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
 }
 
-.projects--area .project .icons {
+.projects--area .project .box button {
+  border: 0;
+  grid-column: 1 / span 2;
+}
+
+.projects--area .project .project-icons {
   display: flex;
   padding: 10px 0;
 }
 
-.projects--area .project .icons i {
-  font-size: 30px;
+.projects--area .project .project-icons i {
+  font-size: 20px;
   margin-right: 10px;
 }
 
@@ -365,9 +437,13 @@ header.rolagem {
   padding: 10px 20px;
 }
 
-.projects--area .txt--project h3 {
+.projects--area .box h3 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 8px 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .projects--area .txt--project span {
@@ -382,7 +458,7 @@ header.rolagem {
 /* FOOTER */
 
 footer {
-  background-color: #0c0c0c;
+  background-color: rgb(13, 15, 20);
   height: 400px;
 }
 
@@ -445,6 +521,142 @@ footer {
   color: #d1d1d1;
 }
 
+/* MODAL  PROJETOS */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background: rgb(27, 28, 31);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s;
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: var(--primary);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-device {
+  width: 50px;
+  height: 50px;
+  background: rgb(48, 50, 56);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-screen .modal-container {
+  width: 90%;
+  display: grid;
+  margin: auto;
+  grid-template-columns: auto 70%;
+  grid-template-rows: auto 1fr 1fr;
+}
+
+.mobile-screen .modal-link--image {
+  grid-row: 1;
+}
+
+.mobile-screen .modal-description {
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: 20px;
+}
+
+.mobile-screen .modal-tech {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.modal-description p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #919191;
+  text-align: justify;
+}
+
+.modal-tech {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  cursor: default;
+  font-size: 15px;
+}
+
+.modal-tech div {
+  background-color: rgb(48, 50, 56);
+  padding: 7px 20px;
+
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-screen .box-button {
+  display: flex;
+  align-items: end;
+  font-size: 18px;
+}
+
 @media (max-width: 1500px) {
   .container {
     width: 1250px;
@@ -457,7 +669,6 @@ footer {
   }
 
   .projects--area .project {
-    width: 350px;
   }
 
   .header #download-cv {
@@ -475,22 +686,22 @@ footer {
   }
 
   .projects--area .projects {
-    display: block;
   }
 
   .projects--area .project {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 400px 1fr;
-  }
-
-  .projects--area .project:not(:first-child) {
-    margin-top: 40px;
   }
 
   .projects--area .project .box {
     margin-top: 10px;
     grid-row: 2;
+  }
+
+  .projects--area button {
+    display: none;
+  }
+
+  .projects--area #project-pagina-de-links-raimunda .box {
+    display: block;
   }
 
   .projects--area .project .txt--project {
@@ -654,10 +865,6 @@ footer {
 
   .section-skills h2 {
     font-size: 30px;
-  }
-
-  .section-skills .skills--icons .skill {
-    width: auto;
   }
 
   .skills--area .skill:not(:last-child) {

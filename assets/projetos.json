@@ -1,0 +1,111 @@
+{
+  "projetos": [
+    {
+      "id": "thiago-portifolio",
+      "screen": "desktop",
+      "imagem": "assets/image/portifolio.png",
+      "tecnologias": [
+        {
+          "name": "JavaScript",
+          "icone": "fa-brands fa-square-js",
+          "cor": "#d1be15"
+        },
+        {
+          "name": "HTML",
+          "icone": "fa-brands fa-html5",
+          "cor": "#c06215"
+        },
+        {
+          "name": "CSS",
+          "icone": "fa-brands fa-css3-alt",
+          "cor": "#3881c5"
+        }
+      ],
+      "link": "https://thiagovinicio.netlify.app/",
+      "titulo": "Portfólio Thiago Vinicio",
+      "descricao": [
+        "Um projeto pessoal criado por mim, onde coloco em prática meus principais conhecimentos adquiridos nos últimos meses em JavaScript, Html e Css.",
+        "Nele conto um pouco da minha paixão por tecnologia e o que me levou a escolher a programação como futura profissão, além de demonstrar um pouco das minhas habilidades de Frontend e mais importante, meus projetos que tenho mais orgulho."
+      ]
+    },
+    {
+      "id": "starbucks",
+      "screen": "desktop",
+      "imagem": "assets/image/starbucks.png",
+      "tecnologias": [
+        {
+          "name": "HTML",
+          "icone": "fa-brands fa-html5",
+          "cor": "#c06215"
+        },
+        {
+          "name": "CSS",
+          "icone": "fa-brands fa-css3-alt",
+          "cor": "#3881c5"
+        }
+      ],
+      "link": "https://taupe-kitsune-80237a.netlify.app/",
+      "titulo": "StarBucks",
+      "descricao": [
+        "Este projeto é uma réplica detalhada do site da Starbucks, desenvolvida como um exercício prático para fortalecer o conhecimento em desenvolvimento web.",
+        "Utilizamos tecnologias como HTML e CSS para reproduzir a interface e funcionalidades do site original. Este trabalho foi realizado sob a orientação do Professor Bonieky Lacerda, no curso da B7Web."
+      ]
+    },
+    {
+      "id": "pizzas",
+      "screen": "desktop",
+      "imagem": "assets/image/pizza.png",
+      "tecnologias": [
+        {
+          "name": "JavaScript",
+          "icone": "fa-brands fa-square-js",
+          "cor": "#d1be15"
+        },
+        {
+          "name": "HTML",
+          "icone": "fa-brands fa-html5",
+          "cor": "#c06215"
+        },
+        {
+          "name": "CSS",
+          "icone": "fa-brands fa-css3-alt",
+          "cor": "#3881c5"
+        }
+      ],
+      "link": "https://pizza-site-treinando-javascript.netlify.app/",
+      "titulo": "Pizzas",
+      "descricao": [
+        "Este projeto é um site de pizzaria com funcionalidades de seleção e adição de pizzas ao carrinho, desenvolvido com JavaScript, HTML e CSS. Foi realizado como parte do curso de ensino e aprendizagem com o Professor Bonieky Lacerda da B7Web.",
+        "O objetivo principal foi aplicar na prática conceitos aprendidos, proporcionando uma interface interativa e amigável para o usuário. Através deste projeto, aprimoro minhas habilidades, técnicas e a capacidade de criar experiências digitais envolventes e funcionais."
+      ]
+    },
+    {
+      "id": "pagina-de-links-raimunda",
+      "screen": "mobile",
+      "imagem": "assets/image/Raimunda veras.jpg",
+      "tecnologias": [
+        {
+          "name": "JavaScript",
+          "icone": "fa-brands fa-square-js",
+          "cor": "#d1be15"
+        },
+        {
+          "name": "HTML",
+          "icone": "fa-brands fa-html5",
+          "cor": "#c06215"
+        },
+        {
+          "name": "CSS",
+          "icone": "fa-brands fa-css3-alt",
+          "cor": "#3881c5"
+        }
+      ],
+      "link": "https://viniz1nnn.github.io/Raimunda-veras/",
+      "titulo": "Raimunda Veras Engenharia",
+      "descricao": [
+        "Esta é uma página de links personalizada, desenvolvida com HTML, CSS e JavaScript, que permite aos usuários acessar rapidamente suas redes sociais e outros recursos importantes. O objetivo principal foi criar uma interface simples, intuitiva e responsiva, que proporcionasse uma experiência de usuário agradável e eficiente. ",
+        "A página de links oferece uma navegação fácil e rápida para as principais redes sociais e recursos, tornando-a uma ferramenta útil para qualquer pessoa que deseje centralizar seus links importantes em um só lugar. Através deste projeto, pude aprimorar minhas habilidades em design de interface do usuário, desenvolvimento front-end e otimização de desempenho web."
+      ]
+    }
+  ]
+}
