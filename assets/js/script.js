@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Preenche os dados básicos (visíveis inicialmente)
         const img = projetoClone.querySelector(".project-image");
-        const title = projetoClone.querySelector(".project-title");
+        const title = projetoClone.querySelector(".project-title .title-text");
         const iconsContainer = projetoClone.querySelector(".project-icons");
 
         projetoClone.id = `project-${projeto.id}`;
