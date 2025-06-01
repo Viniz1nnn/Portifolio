@@ -176,7 +176,7 @@ header.rolagem {
 }
 
 .section-initial h2 {
-  padding: 10px 0;
+  margin: 10px 0;
   color: #fff;
 }
 
@@ -207,9 +207,6 @@ header.rolagem {
 .initial--area .buttons {
   display: flex;
   gap: 20px;
-}
-
-.initial--area .button {
   margin-top: 30px;
 }
 
@@ -246,7 +243,7 @@ header.rolagem {
 
 .section-about .content p {
   color: #888888;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .section-about .content span {
@@ -294,7 +291,7 @@ header.rolagem {
 }
 
 .section-skills h2 {
-  padding-top: 50px;
+  margin-top: 50px;
   font-size: 40px;
 }
 
@@ -410,7 +407,7 @@ header.rolagem {
 .projects--area .project .box {
   flex-grow: 1;
   display: grid;
-  margin: 20px;
+  margin: 15px 20px;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
 }
@@ -422,12 +419,11 @@ header.rolagem {
 
 .projects--area .project .project-icons {
   display: flex;
-  padding: 10px 0;
+  gap: 10px;
 }
 
 .projects--area .project .project-icons i {
   font-size: 20px;
-  margin-right: 10px;
 }
 
 .projects--area a {
@@ -442,26 +438,17 @@ header.rolagem {
 
 .projects--area .box h3 {
   width: 100%;
+  margin-bottom: 8px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 8px 0;
   transition: all ease 0.3s;
-}
-
-.projects--area .box h3:hover {
-  transform: scale(1.05);
 }
 
 .projects--area .box h3 .arrow-icon {
   display: none;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   font-size: 12px;
-}
-
-.projects--area .box h3:hover .arrow-icon {
-  display: inline-block;
-  transform: translateX(5px);
 }
 
 .projects--area .txt--project span {
@@ -489,7 +476,7 @@ footer {
 
 .contacts--area h2 {
   font-size: 30px;
-  padding-right: 30px;
+  margin-right: 30px;
 }
 
 .contacts--area h2 span {
@@ -507,7 +494,7 @@ footer {
 }
 
 .contacts--area .contact {
-  padding: 10px 0;
+  margin: 20px 0;
   display: flex;
 }
 
@@ -708,8 +695,17 @@ footer {
     display: none;
   }
 
+  .projects--area .box h3:hover {
+    transform: scale(1.05);
+  }
+
   .projects--area .box h3 .arrow-icon {
     display: initial;
+  }
+
+  .projects--area .box h3:hover .arrow-icon {
+    display: inline-block;
+    transform: translateX(5px);
   }
 
   .projects--area #project-pagina-de-links-raimunda .box {
@@ -881,6 +877,10 @@ footer {
     text-align: center;
   }
 
+  .initial--area .buttons {
+    justify-content: center;
+  }
+
   .section-initial .photo img {
     width: 270px;
     height: 270px;
@@ -923,8 +923,8 @@ footer {
   }
 
   .contacts--area h2 {
-    padding: 0;
-    padding-bottom: 20px;
+    margin: 0;
+    margin-bottom: 20px;
   }
 
   .contacts--area .contacts {
