@@ -962,4 +962,23 @@ footer {
     padding-top: 20px;
     border-top: 2px solid rgb(117, 12, 255);
   }
+
+  .mobile-screen .modal-container {
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto 1fr 1fr;
+  }
+
+  .mobile-screen .modal-description.overflow-active {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .mobile-screen .modal-container {
+    display: block;
+  }
+
+  .mobile-screen .modal-description {
+    margin: 0;
+  }
 }
