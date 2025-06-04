@@ -183,6 +183,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostra o modal
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
+
+    window.addEventListener("resize", checkTextOverflow);
+    setTimeout(checkTextOverflow, 100); // Delay para renderização
+  }
+
+  // Ajusta o texto da descrição
+
+  function checkTextOverflow() {
+    const modal = document.getElementById("projectModal");
+    if (!modal || !modal.classList.contains("mobile-screen")) return;
+
+    const desc = modal.querySelector(".modal-description");
+    if (!desc) return;
+
+    // Remove classe antes de verificar
+    desc.classList.remove("overflow-active");
+
+    // Verifica se precisa de scroll (com margem de segurança)
+    if (desc.scrollHeight > desc.clientHeight + 5) {
+      desc.classList.add("overflow-active");
+    }
   }
 
   // Fechar modal

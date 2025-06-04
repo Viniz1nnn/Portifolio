@@ -611,6 +611,7 @@ footer {
 
 .mobile-screen .modal-container {
   width: 90%;
+  height: 100%;
   display: grid;
   margin: auto;
   grid-template-columns: auto 70%;
@@ -622,9 +623,36 @@ footer {
 }
 
 .mobile-screen .modal-description {
+  overflow-y: auto;
+  max-height: 410px;
+  transition: all 0.3s ease;
   grid-column: 2;
   grid-row: 1;
   margin-left: 20px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.mobile-screen .modal-description.overflow-active {
+  max-height: 50vh; /* Use viewport height para responsividade */
+
+  /* Gradiente indicador de mais conteúdo */
+  mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+/* Barra de scroll personalizada */
+.mobile-screen .modal-description.overflow-active::-webkit-scrollbar {
+  width: 6px;
+}
+.mobile-screen .modal-description.overflow-active::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 
 .mobile-screen .modal-tech {
@@ -844,7 +872,8 @@ footer {
   }
 
   .mobile-screen .modal-container {
-    grid-template-columns: auto 60%;
+    grid-template-columns: 210px auto;
+    grid-template-rows: auto 1fr 1fr;
   }
 }
 
@@ -932,5 +961,24 @@ footer {
     padding: 0;
     padding-top: 20px;
     border-top: 2px solid rgb(117, 12, 255);
+  }
+
+  .mobile-screen .modal-container {
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto 1fr 1fr;
+  }
+
+  .mobile-screen .modal-description.overflow-active {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .mobile-screen .modal-container {
+    display: block;
+  }
+
+  .mobile-screen .modal-description {
+    margin: 0;
   }
 }
