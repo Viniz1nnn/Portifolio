@@ -634,7 +634,7 @@ footer {
 }
 
 .mobile-screen .modal-description.overflow-active {
-  max-height: 50vh; /* Use viewport height para responsividade */
+  max-height: 45vh; /* Use viewport height para responsividade */
 
   /* Gradiente indicador de mais conteúdo */
   mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
@@ -650,6 +650,7 @@ footer {
 .mobile-screen .modal-description.overflow-active::-webkit-scrollbar {
   width: 6px;
 }
+
 .mobile-screen .modal-description.overflow-active::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
@@ -673,6 +674,19 @@ footer {
   margin-bottom: 20px;
   cursor: default;
   font-size: 15px;
+  overflow-x: auto;
+  transition: all 0.3s ease;
+  padding-bottom: 10px;
+  position: relative;
+  scroll-behavior: smooth;
+
+  mask-image: linear-gradient(to right, black 0%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 85%,
+    transparent 100%
+  );
 }
 
 .modal-tech div {
@@ -964,7 +978,7 @@ footer {
   }
 
   .mobile-screen .modal-container {
-    grid-template-columns: 180px auto;
+    grid-template-columns: 185px auto;
     grid-template-rows: auto 1fr 1fr;
   }
 
