@@ -22,6 +22,22 @@ body {
   margin: auto;
 }
 
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none !important;
+}
+
+a:active,
+a:focus {
+  background-color: transparent !important;
+}
+
 .button {
   display: inline-block;
   max-width: 150px;
@@ -34,10 +50,23 @@ body {
   transition: all 0.3s;
   cursor: pointer;
   border: 0;
+  transition: all 0.2s ease;
 }
 
 .button:hover {
   background: #473a94;
+}
+
+button:active,
+button:focus {
+  transform: none;
+  background: inherit !important;
+}
+
+@media (hover: none) {
+  .button:focus {
+    outline: none;
+  }
 }
 
 /* HEADER */
