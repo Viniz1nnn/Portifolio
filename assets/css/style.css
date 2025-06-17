@@ -20,6 +20,7 @@ body {
   width: 80%;
   max-width: 1400px;
   margin: auto;
+  height: 100%;
 }
 
 a,
@@ -85,33 +86,30 @@ button:focus {
   border-radius: 50%;
   filter: blur(60px);
   opacity: 0.3;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .circle-1 {
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, #6b36fc 0%, #360586 100%);
-  right: -100px;
-  animation-delay: 0s;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .circle-2 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, #8441a4 0%, #821aa1 100%);
-  right: 5%;
-  animation-delay: 3s;
+  background: radial-gradient(circle, #5237e7 0%, #3c08b6 100%);
+  top: 50%;
+  transform: translateY(20%);
 }
 
 .circle-3 {
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, #f6d365 0%, #fda085 100%);
+  background: radial-gradient(circle, #656ff6 0%, #2e7adf 100%);
   top: 60%;
   left: 50%;
-  animation-delay: 6s;
 }
 
 /* HEADER */
@@ -206,26 +204,37 @@ header.rolagem {
 /* SECTION INITIAL */
 
 .section-initial {
+  overflow: hidden;
   width: 100%;
   height: 100lvh;
   background-color: rgb(13, 15, 20);
   position: relative;
 }
 
-.section-initial .triangle-big {
-  background: radial-gradient(rgba(68, 58, 97, 1) 20%, rgba(68, 58, 97, 0) 70%);
-  width: 600px;
-  right: 0;
-  margin-right: auto;
-  height: 600px;
-  border-radius: 50%;
-  position: absolute;
+.section-initial .light-circle {
+  filter: blur(180px);
+  opacity: 0.3;
+}
+
+.section-initial .circle-1 {
+  width: 700px;
+  height: 700px;
+  right: -150px;
+}
+
+.section-initial .circle-2 {
+  width: 450px;
+  height: 450px;
+  left: -300px;
 }
 
 .initial--area {
   position: relative;
   display: flex;
-  height: 100vh;
+  height: 100lvh;
+  /*top: 50%;
+  transform: translateY(-50%);
+  gap: 60px;*/
   justify-content: space-between;
   align-items: center;
 }
@@ -263,6 +272,16 @@ header.rolagem {
   box-shadow: 0 0 20px #000000;
   transition: 0.5s;
   animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
 }
 
 .section-initial .photo img:hover {
@@ -902,6 +921,12 @@ footer {
     transform: rotate(45deg) translate(-5px, -7px);
   }
 
+  .section-initial .circle-1 {
+    width: 500px;
+    height: 500px;
+    right: -100px;
+  }
+
   .section-initial h1 {
     font-size: 23px;
   }
@@ -956,7 +981,7 @@ footer {
 }
 
 @media (max-width: 780px) {
-  .circle-1 {
+  .section-initial .circle-1 {
     right: -200px;
   }
 
@@ -982,10 +1007,14 @@ footer {
 }
 
 @media (max-width: 620px) {
-  .light-circle {
+  .section-initial .circle-1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .section-initial .circle-2 {
+    display: none;
   }
 
   .initial--area {
