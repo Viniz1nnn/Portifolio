@@ -69,6 +69,51 @@ button:focus {
   }
 }
 
+.light-decorations {
+  position: absolute;
+  width: 80%;
+  max-width: 1400px;
+  margin: auto;
+  height: inherit;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.light-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.circle-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #6b36fc 0%, #360586 100%);
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #8441a4 0%, #821aa1 100%);
+  right: 5%;
+  animation-delay: 3s;
+}
+
+.circle-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #f6d365 0%, #fda085 100%);
+  top: 60%;
+  left: 50%;
+  animation-delay: 6s;
+}
+
 /* HEADER */
 
 header {
@@ -162,29 +207,19 @@ header.rolagem {
 
 .section-initial {
   width: 100%;
-  height: 100dvh;
+  height: 100lvh;
   background-color: rgb(13, 15, 20);
-}
-
-.section-initial .triangles {
-  width: 100%;
-  height: inherit;
-  display: flex;
-  position: absolute;
-  justify-content: end;
+  position: relative;
 }
 
 .section-initial .triangle-big {
-  border-bottom: 100vh solid rgb(33, 32, 36);
-  width: 30%;
+  background: radial-gradient(rgba(68, 58, 97, 1) 20%, rgba(68, 58, 97, 0) 70%);
+  width: 600px;
+  right: 0;
+  margin-right: auto;
+  height: 600px;
+  border-radius: 50%;
   position: absolute;
-  border-left: 200px solid transparent;
-}
-
-.section-initial .triangle-small {
-  border-top: 100vh solid rgb(56, 55, 61);
-  width: 50%;
-  border-left: 700px solid transparent;
 }
 
 .initial--area {
@@ -227,6 +262,7 @@ header.rolagem {
   border: 3px solid #f3f3f3;
   box-shadow: 0 0 20px #000000;
   transition: 0.5s;
+  animation: float 15s infinite ease-in-out;
 }
 
 .section-initial .photo img:hover {
@@ -920,6 +956,10 @@ footer {
 }
 
 @media (max-width: 780px) {
+  .circle-1 {
+    right: -200px;
+  }
+
   .section-initial .photo img {
     width: 230px;
     height: 230px;
@@ -942,6 +982,12 @@ footer {
 }
 
 @media (max-width: 620px) {
+  .light-circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .initial--area {
     flex-wrap: wrap-reverse;
     justify-content: center;
