@@ -20,6 +20,7 @@ body {
   width: 80%;
   max-width: 1400px;
   margin: auto;
+  height: 100%;
 }
 
 a,
@@ -85,8 +86,6 @@ button:focus {
   border-radius: 50%;
   filter: blur(60px);
   opacity: 0.3;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .circle-1 {
@@ -95,14 +94,18 @@ button:focus {
   background: radial-gradient(circle, #6b36fc 0%, #360586 100%);
   right: -100px;
   animation-delay: 0s;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .circle-2 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, #8441a4 0%, #821aa1 100%);
-  right: 5%;
+  background: radial-gradient(circle, #5237e7 0%, #3c08b6 100%);
   animation-delay: 3s;
+  top: 50%;
+  left: -300px;
+  transform: translateY(20%);
 }
 
 .circle-3 {
@@ -206,6 +209,7 @@ header.rolagem {
 /* SECTION INITIAL */
 
 .section-initial {
+  overflow: hidden;
   width: 100%;
   height: 100lvh;
   background-color: rgb(13, 15, 20);
@@ -956,7 +960,7 @@ footer {
 }
 
 @media (max-width: 780px) {
-  .circle-1 {
+  .section-initial .circle-1 {
     right: -200px;
   }
 
@@ -982,10 +986,14 @@ footer {
 }
 
 @media (max-width: 620px) {
-  .light-circle {
+  .section-initial .circle-1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .section-initial .circle-2 {
+    display: none;
   }
 
   .initial--area {
