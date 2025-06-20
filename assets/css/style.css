@@ -23,20 +23,26 @@ body {
   height: 100%;
 }
 
+/* Remove estado ativo */
+.project,
+a:active,
+.project,
+a:focus {
+  background: transparent !important;
+  transform: none !important;
+}
+
 a,
 button,
 input,
-textarea {
+textarea,
+.project,
+.project * {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
   outline: none !important;
-}
-
-a:active,
-a:focus {
-  background-color: transparent !important;
 }
 
 .button {
