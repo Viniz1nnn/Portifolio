@@ -23,20 +23,26 @@ body {
   height: 100%;
 }
 
+/* Remove estado ativo */
+.project,
+a:active,
+.project,
+a:focus {
+  background: transparent !important;
+  transform: none !important;
+}
+
 a,
 button,
 input,
-textarea {
+textarea,
+.project,
+.project * {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
   outline: none !important;
-}
-
-a:active,
-a:focus {
-  background-color: transparent !important;
 }
 
 .button {
@@ -207,6 +213,7 @@ header.rolagem {
   overflow: hidden;
   width: 100%;
   height: 100lvh;
+  min-height: 740px;
   background-color: rgb(13, 15, 20);
   position: relative;
 }
@@ -232,9 +239,6 @@ header.rolagem {
   position: relative;
   display: flex;
   height: 100lvh;
-  /*top: 50%;
-  transform: translateY(-50%);
-  gap: 60px;*/
   justify-content: space-between;
   align-items: center;
 }
@@ -311,7 +315,7 @@ header.rolagem {
 /* SECTION ABOUT */
 
 .about--area {
-  min-height: 100dvh;
+  min-height: 100lvh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1021,15 +1025,18 @@ footer {
     flex-wrap: wrap-reverse;
     justify-content: center;
     text-align: center;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 60px;
+  }
+
+  .section-initial .photo img {
+    animation: none;
   }
 
   .initial--area .buttons {
     justify-content: center;
-  }
-
-  .section-initial .photo img {
-    width: 270px;
-    height: 270px;
   }
 
   .section-skills .skills--icons {
