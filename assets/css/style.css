@@ -78,6 +78,8 @@ button:focus {
 
 .light-decorations {
   position: absolute;
+  display: flex;
+  justify-content: center;
   width: 80%;
   max-width: 1400px;
   margin: auto;
@@ -367,9 +369,24 @@ header.rolagem {
 
 .section-skills {
   background-color: rgb(6, 6, 10);
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-skills .light-circle {
+  filter: blur(150px);
+  opacity: 0.3;
+}
+
+.section-skills .circle-1 {
+  top: -300px;
+  width: 700px;
+  height: 700px;
 }
 
 .skills--area {
+  position: relative;
   min-height: 350px;
   width: 90%;
   display: flex;
@@ -415,13 +432,30 @@ header.rolagem {
 
 /* SECTION PROJECTS */
 
+.section-projects {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-projects .light-circle {
+  filter: blur(70px);
+}
+
+.section-projects .circle-2 {
+  top: -400px;
+  left: -180px;
+}
+
 .projects--area {
   padding: 100px 0;
   width: 100%;
   max-width: 100vw;
+
+  overflow: hidden;
 }
 
 .projects--area h2 {
+  position: relative;
   font-size: 40px;
   padding-bottom: 40px;
 }
