@@ -12,7 +12,7 @@ html,
 body {
   overflow-x: hidden;
   box-sizing: border-box;
-  background-color: rgb(12, 12, 15);
+  background-color: rgb(22, 23, 27);
   font-family: "Roboto";
 }
 
@@ -53,7 +53,7 @@ textarea,
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s;
+  transition: ease-in-out all 0.3s;
   cursor: pointer;
   border: 0;
   transition: all 0.2s ease;
@@ -67,12 +67,6 @@ button:active,
 button:focus {
   transform: none;
   background: inherit !important;
-}
-
-@media (hover: none) {
-  .button:focus {
-    outline: none;
-  }
 }
 
 .light-decorations {
@@ -123,12 +117,12 @@ header {
   width: 100%;
   height: 100px;
   position: fixed;
-  transition: 0.3s;
+  transition: ease-in-out all 0.3s;
   z-index: 1;
 }
 
 header.rolagem {
-  background-color: rgba(13, 13, 13, 0.8);
+  background: linear-gradient(rgb(5, 5, 10) 20%, rgba(8, 8, 17, 0.9) 70%);
 }
 
 .header {
@@ -166,7 +160,7 @@ header.rolagem {
 }
 
 .menu .line {
-  transition: 0.3s;
+  transition: ease-in-out all 0.3s;
   width: 30px;
   height: 2px;
   background: #fff;
@@ -186,7 +180,7 @@ header.rolagem {
 
 .menu li a {
   font-size: 20px;
-  height: 100px;
+  height: inherit;
   display: flex;
   align-items: center;
   transition: 0.3s;
@@ -912,22 +906,26 @@ footer {
     justify-content: flex-end;
   }
 
-  .menu li {
-    height: 10%;
-  }
-
   .menu .nav-list {
     display: none;
     top: 70px;
     gap: 20px;
     position: absolute;
     right: 0;
-    width: 40vw;
-    height: 100vh;
-    background-color: rgba(13, 13, 13, 0.95);
+    height: calc(100vh - 70px);
+    background: radial-gradient(
+      circle,
+      rgba(11, 9, 20, 0.94) 0%,
+      rgba(10, 10, 20, 0.95) 100%
+    );
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     transform: translateX(100%);
+  }
+
+  .menu li {
+    height: 80px;
   }
 
   .menu .nav-list.active {
@@ -936,10 +934,6 @@ footer {
 
   .nav-list.hidden {
     transform: translateX(100%);
-  }
-
-  .menu .nav-list a {
-    font-size: 25px;
   }
 
   header {
@@ -960,7 +954,8 @@ footer {
   }
 
   .menu .mobile-menu.active #line1 {
-    transform: rotate(-45deg) translate(-7px, 7px);
+    width: 20px;
+    transform: rotate(-45deg) translate(-6px, 5px);
   }
 
   .menu .mobile-menu.active #line2 {
@@ -968,7 +963,8 @@ footer {
   }
 
   .menu .mobile-menu.active #line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
+    transform: rotate(45deg) translate(-7px, -7px);
+    width: 20px;
   }
 
   .section-initial .circle-1 {
