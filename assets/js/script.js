@@ -58,10 +58,14 @@ let navLinks = document.querySelectorAll(".nav-link");
 mobileMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
   nav.classList.toggle("active");
-  if (header.style.backgroundColor === "rgba(13, 13, 13, 0.95)") {
-    header.style.backgroundColor = "";
+  if (
+    header.style.background ===
+    "linear-gradient(rgb(5, 5, 10) 20%, rgb(8, 8, 17) 70%)"
+  ) {
+    header.style.background = "";
   } else {
-    header.style.backgroundColor = "rgba(13, 13, 13, 0.95)";
+    header.style.background =
+      "linear-gradient(rgb(5, 5, 10) 20%, rgb(8, 8, 17) 70%)";
   }
   nav.style.display = "flex";
 });
