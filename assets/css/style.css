@@ -953,6 +953,10 @@ footer {
     margin: 20% 0;
   }
 
+  .menu .nav-list {
+    width: 300px;
+  }
+
   .menu .mobile-menu.active #line1 {
     width: 20px;
     transform: rotate(-45deg) translate(-6px, 5px);
@@ -1035,10 +1039,6 @@ footer {
     width: 230px;
     height: 230px;
     margin-top: 70px;
-  }
-
-  .menu .nav-list {
-    width: 300px;
   }
 
   .about--area .content .photo {
