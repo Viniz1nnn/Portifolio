@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mostra o modal
     modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden"; // Para html
 
     window.addEventListener("resize", checkTextOverflow);
     setTimeout(checkTextOverflow, 100); // Delay para renderização
@@ -201,14 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fechar modal
   document.querySelector(".close-modal").addEventListener("click", () => {
     document.getElementById("projectModal").classList.remove("active");
-    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
   });
 
   // Fechar ao clicar fora do conteúdo
   document.getElementById("projectModal").addEventListener("click", (e) => {
     if (e.target === document.getElementById("projectModal")) {
       document.getElementById("projectModal").classList.remove("active");
-      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }
   });
 });
