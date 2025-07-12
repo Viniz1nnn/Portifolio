@@ -4,69 +4,57 @@
   }, 50);
 });*/
 
+// CONSTANTES GLOBAIS //
+const header = document.querySelector("#header");
+const nav = document.querySelector(".nav-list");
+const mobileMenu = document.querySelector(".mobile-menu");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section, footer");
+
 // HEADER TRANSPARENTE
 
 window.addEventListener("scroll", function () {
-  let header = document.querySelector("#header");
   header.classList.toggle("rolagem", window.scrollY > 0);
 });
 
 // DIRECIONADORES DO SITE
 
-let downloadCv = document.getElementById("download-cv");
-let div1 = document.querySelector(".header");
-let div2 = document.querySelector(".nav-list");
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
 
-window.addEventListener("scroll", function () {
-  let sections = document.querySelectorAll("section, footer");
-  let navLinks = document.querySelectorAll(".nav-link");
+  // Verifica seções visíveis
+  sections.forEach((section) => {
+    const offset = section.offsetTop - 60;
+    const height = section.offsetHeight;
+    const id = section.getAttribute("id");
 
-  sections.forEach(function (section) {
-    var top = window.scrollY;
-    var offset = section.offsetTop - 60;
-    var height = section.offsetHeight;
-    var id = section.getAttribute("id");
-
-    if (top >= offset - 270 && top < offset + height + 270) {
-      navLinks.forEach(function (link) {
-        link.classList.remove("active");
-      });
+    if (
+      scrollPosition >= offset - windowHeight * 0.3 &&
+      scrollPosition < offset + height + windowHeight * 0.3
+    ) {
+      navLinks.forEach((link) => link.classList.remove("active"));
       document
-        .querySelector(".nav-link[href*=" + id + "]")
-        .classList.add("active");
+        .querySelector(`.nav-link[href*="${id}"]`)
+        ?.classList.add("active");
     }
   });
 
-  var footer = document.querySelector("footer");
-  if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
-    navLinks.forEach(function (link) {
-      link.classList.remove("active");
-    });
+  // Ativa "Contatos" no footer
+  if (scrollPosition + windowHeight >= document.body.offsetHeight - 50) {
+    navLinks.forEach((link) => link.classList.remove("active"));
     document
       .querySelector('.nav-link[href*="contatos"]')
-      .classList.add("active");
+      ?.classList.add("active");
   }
 });
 
 // MENU HAMBURGER
 
-let mobileMenu = document.querySelector(".mobile-menu");
-let header = document.querySelector("header");
-let nav = document.querySelector(".nav-list");
-let navLinks = document.querySelectorAll(".nav-link");
-
 mobileMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
   nav.classList.toggle("active");
-  if (
-    header.style.background ===
-    "linear-gradient(rgb(5, 5, 10) 20%, rgb(8, 8, 17) 70%)"
-  ) {
-    header.style.background = "";
-  } else {
-    header.style.background =
-      "linear-gradient(rgb(5, 5, 10) 20%, rgb(8, 8, 17) 70%)";
-  }
+  header.classList.toggle("gradient-bg");
   nav.style.display = "flex";
 });
 
