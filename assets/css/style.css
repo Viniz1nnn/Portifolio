@@ -125,6 +125,10 @@ header.rolagem {
   background: linear-gradient(rgb(5, 5, 10) 20%, rgba(8, 8, 17, 0.9) 70%);
 }
 
+header.gradient-bg {
+  background: linear-gradient(rgb(5, 5, 10) 20%, rgb(8, 8, 17) 70%);
+}
+
 .header {
   display: flex;
   height: inherit;
@@ -819,10 +823,7 @@ footer {
 .modal-tech div {
   background-color: rgb(48, 50, 56);
   padding: 7px 20px;
-
   border-radius: 20px;
-  display: flex;
-  align-items: center;
 }
 
 .mobile-screen .box-button {
